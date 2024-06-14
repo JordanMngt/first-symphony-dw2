@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TagController!{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        {% for tag in tags %}
+        <div class="col-3 mb-4">
+            <details>
+                <summary>{{ tag.id }}</summary>
+                <a href="{{ path('app_tag_show', {'id' : tag.id}) }}">{{ tag.label }}</a>
+            </details>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-4">
+      {% if tag is not null %}
+      <h1>{{ tag.label }}</h1>
+      {% else %}
+      <p>Tag is not available</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

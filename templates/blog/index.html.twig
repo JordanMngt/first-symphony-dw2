@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BlogController!
+{% endblock %}
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		{% for post in posts %}
+		<div class="col-12 mb-4">
+			<h4>{{ post.title }} </h4>
+			<div>
+				{% for tag in post.tags %}
+				<span>#{{ tag.label}}</span>
+				{% endfor %}
+			</div>
+			<a href="{{ path('app_blog_show', {'id' : post.id}) }}">Lire l'article</a>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
